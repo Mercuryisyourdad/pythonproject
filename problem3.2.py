@@ -18,7 +18,7 @@ def top_k_words(s, k):
             if value > max_value:
                 max_key = key
                 max_value = value
-        res.append(max_key)  # 下来要把字典里的最大值删掉，让他循环第二大的值并取出
+        res.append(max_key)  # 下来要把字典里的最大值删掉，让他循环第二大的值并取出 就显得很哇塞
         edg.pop(max_key)
     return res
 
