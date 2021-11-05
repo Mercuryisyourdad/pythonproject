@@ -52,6 +52,7 @@ def top_k_words(s, k):
                 max_key = key
                 max_value = value
         res.append(max_key)
+        edg.pop(max_key)
     return res
 
 
@@ -84,11 +85,13 @@ if __name__ == '__main__':
     print(is_palindrome(-121))
     print(is_anagrams(s='anagram', t='nagaram'))
     print(top_k_words("i love python, he love coding python; the course is about python.. ", 2))
+
     m, c, L = 0, 0, 0.001
     x = [0.18, 1.0, 0.92, 0.07, 0.85, 0.99, 0.87]
     y = [109.85, 155.72, 137.66, 76.17, 139.75, 162.6, 151.77]
-    epochs_list = [200, 500, 1000, 2000, 3000]
-    for epochs in epochs_list:
-        ans = gradient_descent(x, y, epochs)
-        print("epochs: {epochs}; m: {m}; c: {c}".format(epochs=epochs, m=ans[0], c=ans[1]))
+    print(gradient_descent(x, y, 200))
+    print(gradient_descent(x, y, 500))
+    print(gradient_descent(x, y, 1000))
+    print(gradient_descent(x, y, 2000))
+    print(gradient_descent(x, y, 3000))
 

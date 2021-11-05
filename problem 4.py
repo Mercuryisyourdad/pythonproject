@@ -1,15 +1,14 @@
-def mean(con):
-    s = 0
-    for i in con:
-        s += i
-    return s / len(con)
-
-
 def gradient_descent(x, y, epochs, m=0, c=0, L=0.001):
+    def mean(con):
+        s = 0
+        for i in con:
+            s += i
+        return s / len(con)
+
     for t in range(epochs):
         dm, dc = [], []
         for i in range(len(x)):
-            xi = x[i]
+            xi = x[i][0]
             yi = y[i]
             yp = xi * m + c
             dm.append(xi * (yp - yi))

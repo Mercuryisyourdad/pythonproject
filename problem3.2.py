@@ -5,7 +5,11 @@ def top_k_words(s, k):
         if i.isalpha() or i == ' ':
             z += i
     s = z
-    rng = s.split(' ')
+    li = s.split(' ')
+    rng = []
+    for i in li:
+        if i != "":
+            rng.append(i)
     edg = {}
     for i in rng:
         edg[i] = edg.get(i, 0) + 1
@@ -24,4 +28,4 @@ def top_k_words(s, k):
 
 
 if __name__ == '__main__':
-    print(top_k_words("i love python, he love coding python; the course is about python.. ", 2))
+    print(top_k_words("   i love python, he    love coding python. the course is about python. ", 2))
